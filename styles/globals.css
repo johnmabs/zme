@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-navy-950: #08152a;
+  --color-navy-900: #0a1a2f;
+  --color-navy-800: #0f2745;
+  --color-navy-700: #1f4068;
+  --color-navy-500: #2e5c94;
+
+  --color-amber-600: #d9821a;
+  --color-amber-500: #f5a623;
+  --color-amber-400: #ffc861;
+
+  --color-ink-900: #16202c;
+  --color-ink-600: #3d4a59;
+  --color-ink-400: #6b7785;
+
+  --color-mist-50: #f8fafb;
+  --color-mist-100: #f2f5f8;
+  --color-mist-200: #e4eaef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  color: #16202c;
+}
+
+/* Corner bracket "viewport" signature */
+.corner-frame {
+  position: relative;
+}
+
+.corner-frame .cf-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #f5a623;
+  opacity: 0.9;
+  transition:
+    width 0.35s ease,
+    height 0.35s ease,
+    opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.corner-frame .cf-tl {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-frame .cf-tr {
+  top: -1px;
+  right: -1px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+
+.corner-frame .cf-bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-frame .cf-br {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+.corner-frame:hover .cf-corner,
+.corner-frame:focus-within .cf-corner {
+  width: 26px;
+  height: 26px;
+}
+
+/* Blueprint grid texture */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.blueprint-grid-light {
+  background-image:
+    linear-gradient(rgba(15, 39, 69, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 39, 69, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Hover lift for cards */
+.lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #f5a623;
+  outline-offset: 2px;
+}
+
+/* Counter section number */
+.counter-num {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+}
+
+/* Mobile nav */
+.mobile-nav {
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease;
+}
+
+/* Testimonial track */
+#testimonial-track {
+  transition: transform 0.5s ease;
+}
+
+/* Marquee-ish underline accent */
+.accent-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.accent-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 38px;
+  background: #f5a623;
+}
+
+.filter-btn[aria-pressed="true"] {
+  background: #0a1a2f;
+  color: #fff;
+}
+
+.filter-btn[aria-pressed="false"] {
+  background: transparent;
+  color: #3d4a59;
+}
